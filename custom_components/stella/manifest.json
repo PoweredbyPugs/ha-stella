@@ -1,0 +1,12 @@
+{
+  "domain": "stella",
+  "name": "Stella",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://github.com/PoweredbyPugs/ha-stella",
+  "integration_type": "service",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/PoweredbyPugs/ha-stella/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

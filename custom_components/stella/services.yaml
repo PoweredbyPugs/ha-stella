@@ -1,0 +1,27 @@
+call_tool:
+  name: Call tool
+  description: Calls an allowed Stella API tool and returns its JSON response.
+  fields:
+    tool_name:
+      name: Tool name
+      description: Name of the read-only Stella tool to call.
+      required: true
+      example: moon_phase
+      selector:
+        text:
+    arguments:
+      name: Arguments
+      description: JSON object or JSON-encoded object passed to the tool.
+      required: false
+      default: {}
+      example:
+        date: "2026-09-04"
+      selector:
+        object:
+    config_entry_id:
+      name: Config entry ID
+      description: Required only when more than one Stella instance is configured.
+      required: false
+      selector:
+        config_entry:
+          integration: stella

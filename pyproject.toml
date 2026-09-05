@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ha-stella"
+version = "0.1.0"
+description = "Home Assistant integration for the Stella API"
+requires-python = ">=3.14.2"
+
+[project.optional-dependencies]
+test = [
+  "homeassistant>=2026.8.0",
+  "pytest>=8.0",
+  "pytest-aiohttp>=1.0",
+  "pytest-homeassistant-custom-component>=0.13.300",
+  "ruff>=0.12",
+]
+
+[tool.setuptools]
+packages = []
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC"]

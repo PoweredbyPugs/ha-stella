@@ -1,0 +1,48 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Stella",
+        "description": "Enter the base URL for your Stella API.",
+        "data": {
+          "url": "Base URL",
+          "token": "Bearer token (optional)"
+        },
+        "data_description": {
+          "url": "For example, http://punkR.local:3010",
+          "token": "Token sent in the Authorization header"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to Stella",
+      "invalid_auth": "Stella rejected the bearer token"
+    },
+    "abort": {
+      "already_configured": "This Stella instance is already configured"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "current_moon_sign": {"name": "Current moon sign"},
+      "moon_phase": {"name": "Moon phase"},
+      "current_planetary_aspects_count": {"name": "Current planetary aspects count"},
+      "planets_count": {"name": "Planets count"},
+      "api_status": {"name": "API status"}
+    },
+    "binary_sensor": {
+      "connected": {"name": "Connected"}
+    }
+  },
+  "services": {
+    "call_tool": {
+      "name": "Call tool",
+      "description": "Calls an allowed Stella API tool and returns its JSON response.",
+      "fields": {
+        "tool_name": {"name": "Tool name", "description": "Name of the read-only Stella tool to call."},
+        "arguments": {"name": "Arguments", "description": "JSON object passed to the tool."},
+        "config_entry_id": {"name": "Config entry ID", "description": "Stella entry to use when multiple instances are configured."}
+      }
+    }
+  }
+}
