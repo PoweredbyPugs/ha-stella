@@ -47,9 +47,8 @@ class StellaConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
             else:
                 await self.async_set_unique_id(url.casefold())
                 self._abort_if_unique_id_configured()
-                title = urlsplit(url).netloc
                 return self.async_create_entry(
-                    title=title, data={CONF_URL: url, CONF_TOKEN: token}
+                    title="Stella", data={CONF_URL: url, CONF_TOKEN: token}
                 )
 
         schema = vol.Schema(

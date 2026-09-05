@@ -27,7 +27,7 @@ async def test_user_flow(hass) -> None:
         )
 
     assert result["type"] is FlowResultType.CREATE_ENTRY
-    assert result["title"] == "stella.local:3010"
+    assert result["title"] == "Stella"
     assert result["data"] == {
         CONF_URL: "http://stella.local:3010",
         CONF_TOKEN: "token",
